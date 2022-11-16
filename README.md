@@ -63,19 +63,19 @@ git clone https://github.com/superpythonguy/FalconCoin.git
 Step 2.
 
 ```
-cd Falcon coin
+cd FalconCoin/client
 ```
 
 To run wallet do:
 
 ```
-cd client && python3 wallet.py
+python3 wallet.py
 ```
 
 or to run miner do:
 
 ```
-cd client && python3 miner.py
+python3 miner.py
 ```
 
 <img src="client\demo.png" alt="Project logo"></a>
@@ -110,16 +110,14 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Python](https://python.org/) - Server Environment
+- [Flask](https://flask.palletsprojects.com/) - Server Framework
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@superpythonguy](https://github.com/superpythonguy) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/superpythonguy/FalconCoin/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
