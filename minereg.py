@@ -7,19 +7,29 @@ mining for a long time bonus(name pending lol)
 """
 
 def LMTB(jsonloco,user): # Long Mining Time Bonus also known as LMTB
-    if jsonloco < 60: #0
+    if jsonloco < 0: #0
         Bonus_reward = 0
     else:
-        if jsonloco < 120:
+        if jsonloco < 3600: # 1 hour of mining bonus
             Bonus_reward = 0.00009
-            #print("60sec bonus applied! to "+user)
+            #print("1h bonus applied! to "+user)
+            
         else:
-            if jsonloco < 180:
+            if jsonloco < 10800: # 3 hour of mining bonus
                 Bonus_reward = 0.0005
-                #print("120sec bonus applied! to "+user)
+                #print("3h bonus applied! to "+user)
+                
             else:
-                Bonus_reward = 0.0007
-                #print("180 bonus applied! to "+user)
+                if jsonloco < 21600:# 6 hours of mining
+                    Bonus_reward = 0.006
+                    #print("6h bonus applied! to "+user)
+                    
+                else:
+                    if jsonloco < 43200:#12 hour bonus
+                        Bonus_reward = 0.09
+                        
+                    else:# 12+ bonus
+                        Bonus_reward = 0.29
          
     return int(Bonus_reward)
 
