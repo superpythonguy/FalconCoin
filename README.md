@@ -47,26 +47,38 @@ the below instructions are for running and deploying from source
 What things you need to install the software and how to install them.
 
 ```
-Give examples
+pip install hashlib
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+How to run a local copy of Falcon Coin
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Step 1.
 
 ```
-until finished
+git clone https://github.com/superpythonguy/FalconCoin.git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+Step 2.
+
+```
+cd Falcon coin
+```
+
+To run wallet do:
+
+```
+cd client && python3 wallet.py
+```
+
+or to run miner do:
+
+```
+cd client && python3 miner.py
+```
+
+<img src="client\demo.png" alt="Project logo"></a>
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
