@@ -36,6 +36,11 @@ while many coins act as a own standalone economy
 Falcon Coin aims to liase between a client and a seller an example below<br/>
 `The client pays in FLC(Falcon Coin) While the seller recieves USD(or other chosen Fiat currency)`
 
+## Coin SpecSheet
+
+Algo: Falcon-X<br/>
+Supply: infinte<br/>
+Bonuses: LMTB bonus and the lower balance a user has the more he/she is rewarded
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
