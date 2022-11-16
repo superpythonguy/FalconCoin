@@ -1,0 +1,14 @@
+1. Make sure Server is stable and with no logic errors also making sure To add some more features to make koin more "modern"
+
+2. Make a Better API with a explorer and network stats
+
+3. Work on client side e.g miner and wallet
+    Num.3 Continued
+        Wallet:
+            Having better GUI and a transaction message (maybe even a messaging service?)
+        Miner:
+            Colorise CLI and maybe make a GUI wrapper for miner.
+
+4. __________________________DEPLOY PRODUCTION ENVIOMENT of server_____________________
+
+5. Add server ip to web
