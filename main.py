@@ -96,7 +96,7 @@ class ClientThread(threading.Thread): #separate thread for every user
                     lastblock = file.readline()
                     diff = math.ceil(blocks / (diff_incrase_per*len(os.listdir("users"))))
                     rand = random.randint(0, 10000 * (diff))
-                    hashing = hashlib.sha1(str(lastblock + str(rand)).encode("utf-8"))
+                    hashing = hashlib.sha3_512(str(lastblock + str(rand)).encode("utf-8"))
                     #ServerLog("Sending target hash: " + hashing.hexdigest())
                     self.clientsock.send(bytes(lastblock + "," + hashing.hexdigest() + "," + str(diff), encoding='utf8'))
                     file.seek(0)

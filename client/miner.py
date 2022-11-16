@@ -95,7 +95,7 @@ while True:
     job = job.split(",")
     print("Recived new job from pool. Diff: " + job[2])
     for iJob in range(10000 * int(job[2]) + 1):
-        hash = hashlib.sha1(str(job[0] + str(iJob)).encode("utf-8")).hexdigest()
+        hash = hashlib.sha3_512(str(job[0] + str(iJob)).encode("utf-8")).hexdigest()
         hash_count = hash_count + 1
         if job[1] == hash:
             soc.send(bytes(str(iJob)+","+str(last_hash_count)+","+str(round(Timeelapsed)), encoding="utf8"))
