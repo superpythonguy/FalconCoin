@@ -38,7 +38,7 @@ hush()
 
 if not Path("config.ini").is_file():
     print("Initial configuration, you can edit 'config.ini' later\n")
-    pool_address = input("Enter pool adddress (official: localhost): ")
+    pool_address = input("Enter pool adddress (official: 92.5.61.219): ")
     pool_port = input("Enter pool port (official: 5454): ")
     username = input("Enter username: ")
     password = input("Enter password: ")

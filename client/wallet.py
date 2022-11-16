@@ -1,4 +1,4 @@
-import time, socket, sys, os, configparser, tkinter, datetime
+import time, socket, sys, os, configparser, tkinter, datetime, requests
 from tkinter import messagebox
 from tkinter import *
 from pathlib import Path
@@ -6,8 +6,9 @@ from tkinter.messagebox import showinfo
 
 users = {}
 status = ""
-host = 'localhost' #official server ip
-port = 5454 #official server port
+host = "92.5.61.219"
+port = 5454
+
 s = socket.socket()
 config = configparser.ConfigParser()
 
@@ -239,6 +240,7 @@ def WalletWindow():
         
         print("Displaying main wallet window")
         wallet = tkinter.Tk()
+        #wallet.iconify("info\\falconcoin.png")
         wallet.geometry("420x350")
         wallet.resizable(False, False)
         wallet.title("FalconCoin wallet")

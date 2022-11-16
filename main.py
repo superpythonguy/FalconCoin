@@ -50,7 +50,7 @@ class ClientThread(threading.Thread): #separate thread for every user
         while True:
             data = self.clientsock.recv(1024).decode()
             data = data.split(",")
-            if username != "" and data[0] == "REGI": #registration
+            if data[0] == "REGI": #registration
                 username = data[1]
                 password = data[2]
                 ServerLog("Client request account registration.")
@@ -67,7 +67,7 @@ class ClientThread(threading.Thread): #separate thread for every user
                     ServerLog("Account already exists!")
                     self.clientsock.send(bytes("NO", encoding='utf8'))
                     break
-            elif username != "" and data[0] == "LOGI": #login
+            elif data[0] == "LOGI": #login
                 username = data[1]
                 password = data[2]
                 ServerLog("Client request logging in to account " + username)
@@ -219,7 +219,7 @@ class ClientThread(threading.Thread): #separate thread for every user
 
             
 ServerLog("Falcon Coin v" + VER)
-host = "localhost"
+host = "192.168.1.143"
 port = 5454
 new_users_balance = 0
 #reward = 0.00005
