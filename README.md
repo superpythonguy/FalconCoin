@@ -34,7 +34,8 @@
 A CryptoCurrency meant to fill the hole that many other Altcoins have left <br/>
 while many coins act as a own standalone economy
 Falcon Coin aims to liase between a client and a seller an example below<br/>
-`The client pays in FLC(Falcon Coin) While the seller recieves USD(or other chosen Fiat currency)`
+`The client pays in FLC(Falcon Coin) While the seller recieves USD(or other chosen Fiat currency)`<br/>
+Join the [Discord](https://discord.gg/EzsDPZaWQG) For latest Updates
 
 ## Coin SpecSheet
 
