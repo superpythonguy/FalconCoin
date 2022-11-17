@@ -219,7 +219,7 @@ class ClientThread(threading.Thread): #separate thread for every user
 
             
 ServerLog("Falcon Coin v" + VER)
-host = "192.168.1.143"
+host = "10.9.80.42"
 port = 5454
 new_users_balance = 0
 #reward = 0.00005

@@ -6,8 +6,8 @@ from tkinter.messagebox import showinfo
 
 users = {}
 status = ""
-host = "92.5.61.219"
-port = 5454
+host = "FalconCoin-26198.portmap.io"
+port = 41903
 
 s = socket.socket()
 config = configparser.ConfigParser()
