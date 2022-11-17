@@ -122,28 +122,30 @@ class ClientThread(threading.Thread): #separate thread for every user
                          pass
                 if result == str(rand):
                     #ServerLog("Recived good result (" + str(result) + ")")
-                    file = open("balance/"+username + "balance.txt", "r+")
-                    balance = float(file.readline())
-                    # Basic help for new users
-                    # And current reward system
-                    # Will change in future to incorperate hashrates into aswell
-                    # TODO: Add a 'miner bonus' like if you have multiple devices or have mined for a while(1 day?)
-                    bonus=LMTB(hashrates[thread_id]["timeelapsed"],username)
-                    if balance < 50:
-                        reward = (0.0009 + bonus)
-                    else:
-                        if balance < 100:
-                            reward = (0.00009 + bonus)
+                    with locker:
+                        global balance,reward
+                        file = open("balance/"+username + "balance.txt", "r+")
+                        balance = float(file.readline())
+                        # Basic help for new users
+                        # And current reward system
+                        # Will change in future to incorperate hashrates into aswell
+                        # TODO: Add a 'miner bonus' like if you have multiple devices or have mined for a while(1 day?)
+                        bonus=LMTB(hashrates[thread_id]["timeelapsed"],username)
+                        if balance < 50:
+                            reward = (0.0009 + bonus)
                         else:
-                            if balance < 200:
-                                reward = (0.000009 + bonus)
+                            if balance < 100:
+                                reward = (0.00009 + bonus)
                             else:
-                                reward = (0.0000009 + bonus)
-                    balance += reward
-                    file.seek(0)
-                    file.write(str(balance))
-                    file.truncate()
-                    file.close()
+                                if balance < 200:
+                                    reward = (0.000009 + bonus)
+                                else:
+                                    reward = (0.0000009 + bonus)
+                        bal = float(balance) + float(reward)
+                        file.seek(0)
+                        file.write(str(bal))
+                        file.truncate()
+                        file.close()
                     self.clientsock.send(bytes("GOOD", encoding="utf8"))
                     with locker:
                         blocks+= 1

@@ -85,38 +85,19 @@ python3 miner.py
 
 <img src="client\demo.png" alt="Project logo"></a>
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+You can use Falconcoin for transactions<br/>
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+Make sure Host = your local ip<br/>
+and port = the port you want to use
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Python](https://python.org/) - Server Environment
-- [Flask](https://flask.palletsprojects.com/) - Server Framework
+- [Sockets](https://docs.python.org/3/library/socket.html) - Server Framework
 
 ## ✍️ Authors <a name = "authors"></a>
 
@@ -126,6 +107,4 @@ See also the list of [contributors](https://github.com/superpythonguy/FalconCoin
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- BastelPichi for fixing readme
