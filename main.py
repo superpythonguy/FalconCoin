@@ -1,7 +1,7 @@
 VER = "0.1"
 
 import socket, threading, time, random, hashlib, math, datetime, sys, os, json
-from minereg import LMTB
+from minereg import LMTB, randdrop
 from pathlib import Path
 
 def ServerLog(whattolog):
@@ -225,7 +225,7 @@ host = "10.9.80.42"
 port = 5454
 new_users_balance = 0
 #reward = 0.00005
-News ="New server updates: better way of mining"
+News = "Server and wallet has been deployed "
 
 diff_incrase_per = 1000
 
@@ -257,6 +257,7 @@ if not Path("info/blocks.txt").is_file():
     file.close()
     
 ServerLog("Listening for incoming connections...")
+threading.Timer(600,randdrop).start() #threading.Timer(5, UpdateServerInfo).start()  
 while True:
     try:
         tcpsock.listen(16)

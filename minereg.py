@@ -6,6 +6,10 @@ and,
 mining for a long time bonus(name pending lol)
 """
 
+import random, os, time
+
+Randrop_amount = 1.5 # FLC
+
 def LMTB(jsonloco,user): # Long Mining Time Bonus also known as LMTB
     if jsonloco < 0: #0
         Bonus_reward = 0
@@ -33,7 +37,15 @@ def LMTB(jsonloco,user): # Long Mining Time Bonus also known as LMTB
          
     return int(Bonus_reward)
 
-def MultiMine(jsonuser):
-    # TODO: work on multiminer bonus
-    pass 
-    
+def randdrop():
+    # TODO: work on Airdrop
+    winner =  random.choice(os.listdir("balance"))
+    print(winner+" Has Won AirDrop!")
+    with open("balance/"+winner,"r+") as f:
+        currentbal = f.readline()
+        newbal = float(currentbal) + float(Randrop_amount)
+        f.seek(0)
+        f.write(str(newbal))
+        f.truncate()
+        f.close()
+        time.sleep(0.025)
