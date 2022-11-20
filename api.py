@@ -60,7 +60,7 @@ def userslist():
 
 def GetcirculatingFLC():
     global FLC_Mined
-    for filename in os.listdir("balance/"): # All-time mined duco
+    for filename in os.listdir("balance/"): # All-time mined FLC
         if filename.endswith(".txt"):
             try:
                 with open("balance/"+filename) as f:
