@@ -223,7 +223,7 @@ class ClientThread(threading.Thread): #separate thread for every user
                     self.clientsock.send(bytes(News,encoding='utf8'))
             
             elif username != "" and data[0] == "SERINFO":
-                self.clientsock.send(bytes("Miners"+server_info["miners"]+"\n"+"Users: "+server_info,encoding='utf8'))
+                self.clientsock.send(bytes("Miners: "+str(server_info["miners"])+"\n"+"Users: "+str(server_info["users"]),encoding='utf8'))
 
             elif username != "" and data[0] == "CLOSE":
                 ServerLog("Client requested thread (" + thread_id + ") closing")
@@ -283,7 +283,7 @@ while True:
         newthread.start()
         threads.append(newthread)
         UpdateServerInfo()
-        randdrop()
+        #randdrop()
     except:
         print("Error in MainLoop!")
 

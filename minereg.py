@@ -6,8 +6,6 @@ and,
 mining for a long time bonus(name pending lol)
 """
 
-import random, os, time
-
 Randrop_amount = 1.5 # FLC
 
 def LMTB(jsonloco,user): # Long Mining Time Bonus also known as LMTB

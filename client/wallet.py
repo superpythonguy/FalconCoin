@@ -2,7 +2,7 @@ import time, socket, sys, os, configparser, tkinter, datetime, requests
 from tkinter import messagebox
 from tkinter import *
 from pathlib import Path
-from tkinter.messagebox import showinfo
+
 
 users = {}
 status = ""
@@ -224,8 +224,17 @@ def News():
         Current_news = s.recv(1024)
         Current_news = Current_news.decode('utf8')
         Current_news = ''.join([i for i in Current_news if not i.isdigit()])
-        showinfo(now,Current_news)
+        messagebox.showinfo(now,Current_news)
 
+def serverinfo():
+        s.send(bytes("SERINFO",encoding='utf8'))
+        time.sleep(0.35)
+        Serverinfo = s.recv(1024)
+        Serverinfo = Serverinfo.decode('utf8')
+        num = "1","2","4","5","6","7","8","9","0"
+        Serverinfo = Serverinfo.lstrip(str(num))
+        messagebox.showinfo(now,Serverinfo)
+        
 def getBalance():
         global balance
         s.send(bytes("BALA", encoding='utf8'))
@@ -254,6 +263,7 @@ def WalletWindow():
         tkinter.Button(wallet, text = "        Refresh Balance/Wallet        ", command = refreshbal).place(relx=0.27, rely=0.35)
         tkinter.Button(wallet, text = "        About        ", command = About).place(relx=0.25, rely=0.45)
         tkinter.Button(wallet, text = "        News        ", command = News).place(relx=0.5, rely=0.45)
+        tkinter.Button(wallet, text = "        Server-Info       ", command = serverinfo).place(relx=0.35, rely=0.55)
         
         label = tkinter.Label(wallet, text = "2022 FalconCoin developers").place(relx=0.46, rely=0.91)
         
