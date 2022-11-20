@@ -1,14 +1,27 @@
 VER = "0.1"
 
 import socket, threading, time, random, hashlib, math, datetime, sys, os, json
-from minereg import LMTB, randdrop
+from minereg import LMTB
 from pathlib import Path
+
+Randrop_amount = 1.5 # FLC
 
 def ServerLog(whattolog):
     now = datetime.datetime.now()
     now = now.strftime("[%Y-%m-%d %H:%M:%S] ")
     print(now + whattolog)
     
+def randdrop():
+    winner =  random.choice(os.listdir("balance"))
+    ServerLog(winner+" Has Won AirDrop!")
+    with open("balance/"+winner,"r+") as fe:
+        currentbal = fe.readline()
+        newbal = float(currentbal) + float(Randrop_amount)
+        fe.seek(0)
+        fe.write(str(newbal))
+        fe.truncate()
+        fe.close() 
+    threading.Timer(600,randdrop).start()
 
 def UpdateServerInfo():
     global server_info, hashrates
@@ -208,6 +221,9 @@ class ClientThread(threading.Thread): #separate thread for every user
                         
             elif username != "" and data[0] == "NEWS":
                     self.clientsock.send(bytes(News,encoding='utf8'))
+            
+            elif username != "" and data[0] == "SERINFO":
+                self.clientsock.send(bytes("Miners"+server_info["miners"]+"\n"+"Users: "+server_info,encoding='utf8'))
 
             elif username != "" and data[0] == "CLOSE":
                 ServerLog("Client requested thread (" + thread_id + ") closing")
@@ -257,7 +273,8 @@ if not Path("info/blocks.txt").is_file():
     file.close()
     
 ServerLog("Listening for incoming connections...")
-threading.Timer(600,randdrop).start() #threading.Timer(5, UpdateServerInfo).start()  
+ 
+
 while True:
     try:
         tcpsock.listen(16)
@@ -266,6 +283,7 @@ while True:
         newthread.start()
         threads.append(newthread)
         UpdateServerInfo()
+        randdrop()
     except:
         print("Error in MainLoop!")
 

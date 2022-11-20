@@ -63,8 +63,8 @@ while True:
         print("Connected!")
         break
     except:
-        print("Cannot connect to pool server. Retrying in 30 seconds...")
-        time.sleep(30)
+        print("Cannot connect to pool server. Retrying in 315 seconds...")
+        time.sleep(15)
     time.sleep(0.025)
 print("Logging in...")
 soc.send(bytes("LOGI," + username + "," + password, encoding="utf8"))
