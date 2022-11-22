@@ -1,8 +1,20 @@
 import socket, threading, time, hashlib, configparser, sys, platform, signal, statistics, random, datetime
+from pypresence import Presence
 from pathlib import Path
 
 Time1 = time.time()
 
+client_id = "1043964699936555099"  # Put your Client ID in here
+RPC = Presence(client_id)  # Initialize the Presence client
+    
+def discordpresence():
+    RPC.connect() # Start the handshake loop
+    RPC.update(state="Mining FalconCoin Check it out!",details="Mining FLC for A possible profit?") # Updates our presence
+    RPC.update(large_image="falconcoin",large_text="Mining FalconCoin")
+    RPC.update(state="Mining FalconCoin Check it out!",details="Mining FLC for A possible profit?") # Updates our presence
+    #RPC.update(details="Time elapsed: "+str(Time)+"\n"+"Shares accepted: "+str(share))
+    threading.Timer(20,discordpresence).start()
+    
 def hush(): # Hashes/sec calculation
 	global last_hash_count, hash_count, khash_count, hash_mean
 	
@@ -35,6 +47,7 @@ hash_mean = []
 config = configparser.ConfigParser()
 os=platform.platform()
 hush()
+discordpresence()
 
 if not Path("config.ini").is_file():
     print("Initial configuration, you can edit 'config.ini' later\n")
@@ -82,6 +95,7 @@ while True:
 
 print("Start mining...")
 signal.signal(signal.SIGINT, handler)
+
 while True:
     soc.send(bytes("JOB", encoding="utf8"))
     while True:
