@@ -2,7 +2,7 @@ import time, socket, sys, os, configparser, tkinter, datetime, requests
 from tkinter import messagebox
 from tkinter import *
 from pathlib import Path
-
+import hashlib
 
 users = {}
 status = ""
@@ -49,6 +49,8 @@ def FSSignup():
         username = nameE.get()
         passwordconfirm = pwordconfirm.get()
         password = pwordE.get()
+        password.encode()
+        password = hashlib.sha256(password).hexdigest()
         if password == passwordconfirm:
                 s.send(bytes("REGI,"+username+","+password, encoding='utf8')) #send register request to server
                 key = s.recv(2)

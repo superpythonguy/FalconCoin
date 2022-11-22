@@ -144,7 +144,7 @@ class ClientThread(threading.Thread): #separate thread for every user
                         # TODO: Add a 'miner bonus' like if you have multiple devices or have mined for a while(1 day?)
                         bonus=LMTB(hashrates[thread_id]["timeelapsed"],username)
                         if balance < 50:
-                            rewaprd = (0.0009 + bonus)
+                            reward = (0.0009 + bonus)
                         else:
                             if balance < 100:
                                 reward = (0.00009 + bonus)
