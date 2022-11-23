@@ -12,13 +12,14 @@
 
 ---
 
-<p align="center"> This is a brandnew Cryptocurrency that could have potential(and maybe worth something oneday!)<br/>So why not try it?
+<p align="center"> This is a brandnew Cryptocurrency that has potential(and maybe be worth something oneday!)<br/>So why not try it?
     <br> 
 </p>
 
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Roadmap](#roadmap)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Usage](#usage)
@@ -30,17 +31,24 @@
 
 ## 🧐 About <a name = "about"></a>
 
-A CryptoCurrency meant to fill the hole that many other Altcoins have left <br/>
-while many coins act as a own standalone economy
-Falcon Coin aims to liase between a client and a seller an example below<br/>
-`The client pays in FLC(Falcon Coin) While the seller recieves USD(or other chosen Fiat currency)`<br/>
-Join the [Discord](https://discord.gg/EzsDPZaWQG) For latest Updates
+A CryptoCurrency like no other<br/>
+The ultimate ForeRunner in [shitcoins](https://www.investopedia.com/terms/s/shitcoin.asp)<br/>
+Designed with python and sockets so even Beginners in Programming can contribute to the new "Ecosystem"
 
-## Coin SpecSheet
+- Algo: Falcon-X<br/>
+- Supply: infinte<br/>
+- Bonus's: LMTB bonus and the lower balance a user has the more they is rewarded<br/>
 
-Algo: Falcon-X<br/>
-Supply: infinte<br/>
-Bonus's: LMTB bonus and the lower balance a user has the more they is rewarded
+Also dont delay, you know Why?<br/>
+As more Users signup it increases the diff by a bit so early users recieve a sort of "thank you for being in the falconcoin ecosystem",
+sort of reward this promotes<br/>
+The mining of this coin.
+
+## Roadmap <a name = "roadmap"></a>
+
+Currently working on a webwallet<br/>
+And a GiftCard system of some sort<br/>
+**Python Devs needed aswell**
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
