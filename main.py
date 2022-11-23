@@ -58,6 +58,7 @@ class ClientThread(threading.Thread): #separate thread for every user
         
         #### API stuff
         thread_id = str(threading.current_thread().ident)
+        server_info["miners"] += 1
         
         while True:
             data = self.clientsock.recv(1024).decode()
@@ -98,7 +99,6 @@ class ClientThread(threading.Thread): #separate thread for every user
                     self.clientsock.send(bytes("NO", encoding='utf8'))
                     
             elif username != "" and data[0] == "JOB": #main, mining section
-                server_info["miners"] += 1
                 #ServerLog("New job for user: " + username)
                 with locker:
                     file = open("info/blocks.txt", "r")

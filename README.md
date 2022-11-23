@@ -29,7 +29,6 @@
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
-# Incomplete README will finsh soon(hopefully)
 
 A CryptoCurrency meant to fill the hole that many other Altcoins have left <br/>
 while many coins act as a own standalone economy
@@ -41,7 +40,7 @@ Join the [Discord](https://discord.gg/EzsDPZaWQG) For latest Updates
 
 Algo: Falcon-X<br/>
 Supply: infinte<br/>
-Bonuses: LMTB bonus and the lower balance a user has the more he/she is rewarded
+Bonus's: LMTB bonus and the lower balance a user has the more they is rewarded
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
