@@ -49,8 +49,6 @@ def FSSignup():
         username = nameE.get()
         passwordconfirm = pwordconfirm.get()
         password = pwordE.get()
-        password.encode()
-        password = hashlib.sha256(password).hexdigest()
         if password == passwordconfirm:
                 s.send(bytes("REGI,"+username+","+password, encoding='utf8')) #send register request to server
                 key = s.recv(2)
@@ -215,7 +213,7 @@ def About():
         about.title('About')
 
         label = tkinter.Label(about, text = "Official FalconCoin wallet", font="-weight bold").pack()
-        label = tkinter.Label(about, text = "Wallet version: 0.1 alpha").pack()
+        label = tkinter.Label(about, text = "Wallet version: 0.1.5 alpha").pack()
         label = tkinter.Label(about, text = "Made by SuperPythonGuy from FalconCoin developers").pack()
         label = tkinter.Label(about, text = "Learn more at:Git repo pending").pack()
 

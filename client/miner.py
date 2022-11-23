@@ -32,11 +32,11 @@ def hush(): # Hashes/sec calculation
 	threading.Timer(1.0, hush).start() # Run this def every 1s
 
 def handler(signal_received, frame): # If CTRL+C or SIGINT received, send CLOSE request to server in order to exit gracefully.
-  now = datetime.datetime.now()
-  print(now.strftime("\n%H:%M:%S ") + "SIGINT detected - Exiting gracefully. See you soon!")
-  soc.send(bytes("CLOSE", encoding="utf8"))
-  time.sleep(1)
-  sys.exit()
+    now = datetime.datetime.now()
+    print(now.strftime("\n%H:%M:%S ") + "SIGINT detected - Exiting gracefully. See you soon!")
+    soc.send(bytes("CLOSE", encoding="utf8"))
+    time.sleep(1)
+    sys.exit()
     
 shares = [0, 0]
 last_hash_count = 0
