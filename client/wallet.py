@@ -215,7 +215,7 @@ def About():
         label = tkinter.Label(about, text = "Official FalconCoin wallet", font="-weight bold").pack()
         label = tkinter.Label(about, text = "Wallet version: 0.1.5 alpha").pack()
         label = tkinter.Label(about, text = "Made by SuperPythonGuy from FalconCoin developers").pack()
-        label = tkinter.Label(about, text = "Learn more at:Git repo pending").pack()
+        label = tkinter.Label(about, text = "Learn more at: https://github.com/superpythonguy/falconcoin").pack()
 
 
 def News():
@@ -280,7 +280,7 @@ def Start():
         except:
                 root = tkinter.Tk()
                 root.withdraw()
-                messagebox.showerror("Error!","Server communication failed!\nA server update is probably underway.\nPlease try again in a couple of hours.")
+                messagebox.showerror("Error!","Server communication failed!\nA server update is probably underway.\nPlease try again in a couple of hours.\nSorry for inconvinence")
                 sys.exit()
 
 Start()

@@ -20,8 +20,7 @@ def randdrop():
         fe.seek(0)
         fe.write(str(newbal))
         fe.truncate()
-        fe.close() 
-    threading.Timer(600,randdrop).start()
+        fe.close()
 
 def UpdateServerInfo():
     global server_info, hashrates
@@ -281,8 +280,9 @@ while True:
         newthread = ClientThread(ip, port, conn)
         newthread.start()
         threads.append(newthread)
+        radrop = threading.Timer(600,randdrop)
+        radrop.start()
         UpdateServerInfo()
-        #randdrop()
     except:
         print("Error in MainLoop!")
 
