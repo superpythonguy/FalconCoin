@@ -41,7 +41,7 @@ Designed with python and sockets so even Beginners in Programming can contribute
 
 Also dont delay, you know Why?<br/>
 As more Users signup it increases the diff by a bit so early users recieve a sort of "thank you for being in the falconcoin ecosystem",
-sort of reward this promotes<br/>
+sort of reward this promotes,
 The mining of this coin.
 
 ## Roadmap <a name = "roadmap"></a>
@@ -56,8 +56,7 @@ To get started just grab the latest pre-compiled release<br/>
 the below instructions are for running and deploying from source
 
 ### Prerequisites
-
-What things you need to install the software and how to install them.
+Library's needed!
 
 ```
 pip install hashlib
