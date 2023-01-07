@@ -1,10 +1,10 @@
-VER = "0.1"
+VER = "0.1.5"
 
 import socket, threading, time, random, hashlib, math, datetime, sys, os, json
 from minereg import LMTB
 from pathlib import Path
 
-Randrop_amount = 1.5 # FLC
+Randrop_amount = 2 # FLC
 
 def ServerLog(whattolog):
     now = datetime.datetime.now()
@@ -235,11 +235,11 @@ class ClientThread(threading.Thread): #separate thread for every user
 
             
 ServerLog("Falcon Coin v" + VER)
-host = "10.9.80.42"
+host = "10.9.99.162"
 port = 5454
 new_users_balance = 0
 #reward = 0.00005
-News = "Server and wallet has been deployed "
+News = "Server and wallet has been deployed\nAirdrop of Two FLC every hour "
 
 diff_incrase_per = 1000
 
@@ -271,7 +271,7 @@ if not Path("info/blocks.txt").is_file():
     file.close()
     
 ServerLog("Listening for incoming connections...")
- 
+ServerLog("AirDrops enabled with reward amount: "+str(Randrop_amount)+"FLC an hour!")
 
 while True:
     try:
@@ -280,7 +280,7 @@ while True:
         newthread = ClientThread(ip, port, conn)
         newthread.start()
         threads.append(newthread)
-        radrop = threading.Timer(600,randdrop)
+        radrop = threading.Timer(3600,randdrop)
         radrop.start()
         UpdateServerInfo()
     except:

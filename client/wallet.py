@@ -13,7 +13,7 @@ s = socket.socket()
 config = configparser.ConfigParser()
 
 now = datetime.datetime.now()
-now = now.strftime("[%Y-%m-%d %H:%M:%S] ")
+now = now.strftime("[%Y-%m-%d %H:%M:%S]")
 
 def Signup(): #signup definition
         window.destroy()

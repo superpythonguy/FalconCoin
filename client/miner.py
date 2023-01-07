@@ -1,35 +1,23 @@
 import socket, threading, time, hashlib, configparser, sys, platform, signal, statistics, random, datetime
-from pypresence import Presence
 from pathlib import Path
 
 Time1 = time.time()
-
-client_id = "1043964699936555099"  # Put your Client ID in here
-RPC = Presence(client_id)  # Initialize the Presence client
+  
+def hashrateCalculator(): # Hashes/sec calculation
+  global last_hash_count, hash_count, khash_count, hash_mean
+  
+  last_hash_count = hash_count
+  khash_count = last_hash_count / 1000
+  if khash_count == 0:
+    khash_count = random.uniform(0, 2)
     
-def discordpresence():
-    RPC.connect() # Start the handshake loop
-    RPC.update(state="Mining FalconCoin Check it out!",details="Mining FLC for A possible profit?") # Updates our presence
-    RPC.update(large_image="falconcoin",large_text="Mining FalconCoin")
-    RPC.update(state="Mining FalconCoin Check it out!",details="Mining FLC for A possible profit?") # Updates our presence
-    #RPC.update(details="Time elapsed: "+str(Time)+"\n"+"Shares accepted: "+str(share))
-    threading.Timer(20,discordpresence).start()
-    
-def hush(): # Hashes/sec calculation
-	global last_hash_count, hash_count, khash_count, hash_mean
-	
-	last_hash_count = hash_count
-	khash_count = last_hash_count / 1000
-	if khash_count == 0:
-		khash_count = random.uniform(0, 2)
-		
-	hash_mean.append(khash_count) # Calculate average hashrate
-	khash_count = statistics.mean(hash_mean)
-	khash_count = round(khash_count, 2)
-	
-	hash_count = 0 # Reset counter
-	
-	threading.Timer(1.0, hush).start() # Run this def every 1s
+  hash_mean.append(khash_count) # Calculate average hashrate
+  khash_count = statistics.mean(hash_mean)
+  khash_count = round(khash_count, 2)
+  
+  hash_count = 0 # Reset counter
+  
+  threading.Timer(1.0, hashrateCalculator).start() # Run this def every 1s
 
 def handler(signal_received, frame): # If CTRL+C or SIGINT received, send CLOSE request to server in order to exit gracefully.
     now = datetime.datetime.now()
@@ -46,8 +34,7 @@ hash_mean = []
 
 config = configparser.ConfigParser()
 os=platform.platform()
-hush()
-discordpresence()
+hashrateCalculator()
 
 if not Path("config.ini").is_file():
     print("Initial configuration, you can edit 'config.ini' later\n")
